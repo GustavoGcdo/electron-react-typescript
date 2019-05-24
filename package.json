@@ -1,0 +1,53 @@
+{
+  "name": "react-electron",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "main": "build-electron/main.js",
+  "build": {
+    "extends": null,
+    "productName": "React Electron App",
+    "appId": "com.reactelectron",
+    "electronVersion": "5.0.2",
+    "files": ["build/**/*", "build-electron/**/*"]
+  },
+  "scripts": {
+    "start": "nf start",
+    "dev": "nodemon",
+    "start:react": "react-scripts start",
+    "build:react": "react-scripts build",
+    "test:react": "react-scripts test",
+    "eject:react": "react-scripts eject",
+    "build:electron": "sucrase ./electron -d ./build-electron --transforms typescript,imports",
+    "start:electron": "sucrase ./electron -d ./build-electron  --transforms typescript,imports && electron .",
+    "build:prod": "npm run build:react && npm run build:electron && node_modules/.bin/build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.40.2",
+    "foreman": "^3.0.1",
+    "nodemon": "^1.19.0",
+    "sucrase": "^3.10.1",
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.2",
+    "@types/react": "16.8.18",
+    "@types/react-dom": "16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "typescript": "3.4.5",
+    "node-sass": "^4.12.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
