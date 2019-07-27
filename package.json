@@ -9,7 +9,10 @@
     "productName": "React Electron App",
     "appId": "com.reactelectron",
     "electronVersion": "5.0.2",
-    "files": ["build/**/*", "build-electron/**/*"]
+    "files": [
+      "build/**/*",
+      "build-electron/**/*"
+    ]
   },
   "scripts": {
     "start": "nf start",
@@ -43,7 +46,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
